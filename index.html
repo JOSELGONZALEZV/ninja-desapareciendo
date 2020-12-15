@@ -40,8 +40,17 @@
 
 <script>
 
-$("img").hover(function(){
+// función para hacer hablar al navegador
+function hablar(mensaje) {
+  var msg = new SpeechSynthesisUtterance();
+  msg.text = mensaje;
+  window.speechSynthesis.speak(msg)
+}
+
+
+$("img").on("click", function(){
     $(this).fadeOut();
+    hablar("chao");
 });
 
 $(".btn-warning").on("click", function(){
